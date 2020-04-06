@@ -6,9 +6,9 @@ boolean downPressed = false;
 
 
 //Paddle(double x, double y, double speed, double size)
-Paddle p1 = new Paddle(0.03,0.5,0.02, 0.2);
-Ball b = new Ball(0.5,0.5,2.0,0.05);
-Paddle p2 = new Paddle(0.95, 0.5, 0.02, 0.2);
+Paddle p1 = new Paddle(0.03,0.5,0.03, 0.2);
+Ball b = new Ball(0.5,0.5,2,0.05);
+Paddle p2 = new Paddle(0.95, 0.5, 0.03, 0.2);
 
 int p1score = 0;
 int p2score = 0;
@@ -22,10 +22,10 @@ void tick(){
   }
   
   if(b.getY()+0.02<p2.getY()){
-   p2.movePaddle(-0.8); 
+   p2.movePaddle(-0.7); 
   }
   if(b.getY()-0.02>p2.getY()){
-   p2.movePaddle(0.8); 
+   p2.movePaddle(0.7); 
   }
   b.tick();
   if(b.colliding(p1) != -1){
@@ -37,11 +37,13 @@ void tick(){
   
   if(b.getX()+b.getSize()>=1){
    p1score++;
+   b.setSpeed(b.getSpeed()+0.5);
    b.setX(0.5);
    b.setY(0.5);
    delay(1000);
   }
   if(b.getX()<=0){
+   b.setSpeed(b.getSpeed()-0.5);
    p2score++; 
    b.setX(0.5);
    b.setY(0.5);

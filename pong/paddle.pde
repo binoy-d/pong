@@ -37,7 +37,9 @@ class Paddle{
  }
  
  public void movePaddle(double dy){
-   this.y+=dy*speed;
+   if(this.y+dy*speed>0 &&this.y+this.size+dy*speed<1){
+     this.y+=dy*speed;
+   }
  }
  
  

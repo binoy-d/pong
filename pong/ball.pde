@@ -49,11 +49,11 @@ class Ball{
  public void tick(){
   this.x+=this.dx*speed;
   this.y+=this.dy*speed;
-  if(this.y<=0 || this.y+this.size>=1.0){
+  if(this.y<=0.001 || this.y+this.size>=0.999){
     
    this.dy = -this.dy; 
   }
-  if(this.x<=0 || this.x+this.size>=1.0){
+  if(this.x<=0.001 || this.x+this.size>=0.999){
    this.dx = -this.dx; 
   } 
  }
