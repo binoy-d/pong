@@ -8,7 +8,7 @@ boolean downPressed = false;
 //Paddle(double x, double y, double speed, double size)
 Paddle p1 = new Paddle(0.03,0.5,0.02, 0.2);
 Ball b = new Ball(0.5,0.5,2.0,0.05);
-Paddle p2 = new Paddle(0.97, 0.5, 0.02, 0.2);
+Paddle p2 = new Paddle(0.95, 0.5, 0.02, 0.2);
 
 int p1score = 0;
 int p2score = 0;
@@ -39,12 +39,13 @@ void tick(){
    p1score++;
    b.setX(0.5);
    b.setY(0.5);
-   
+   delay(1000);
   }
   if(b.getX()<=0){
    p2score++; 
    b.setX(0.5);
    b.setY(0.5);
+   delay(1000);
   }
   
 }
