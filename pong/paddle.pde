@@ -27,7 +27,10 @@ class Paddle{
    this.speed = speed;
  }
  public double getWidth(){
-   return this.size/3;
+   return this.size/8;
+ }
+ public double getHeight(){
+  return this.size; 
  }
  public void setSize(double size){
    this.size = size; 
@@ -40,7 +43,7 @@ class Paddle{
  
  public void render(){
   fill(255);
-  rect((float)x,(float)y,(float)(size/3), (float)size); 
+  rect((float)x*width,(float)y*height,(float)(size/8)*width, (float)size*height); 
  }
   
 }
