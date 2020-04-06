@@ -21,11 +21,11 @@ void tick(){
    p1.movePaddle(1); 
   }
   
-  if(b.getY()+0.1<p2.getY()){
-   p2.movePaddle(-1); 
+  if(b.getY()+0.02<p2.getY()){
+   p2.movePaddle(-0.8); 
   }
-  if(b.getY()-0.1>p2.getY()){
-   p2.movePaddle(1); 
+  if(b.getY()-0.02>p2.getY()){
+   p2.movePaddle(0.8); 
   }
   b.tick();
   if(b.colliding(p1) != -1){
@@ -33,6 +33,18 @@ void tick(){
   }
   if(b.colliding(p2) != -1){
     b.setAngleBounce((b.colliding(p2)-0.5)/100);
+  }
+  
+  if(b.getX()+b.getSize()>=1){
+   p1score++;
+   b.setX(0.5);
+   b.setY(0.5);
+   
+  }
+  if(b.getX()<=0){
+   p2score++; 
+   b.setX(0.5);
+   b.setY(0.5);
   }
   
 }
@@ -57,6 +69,7 @@ void setup(){
 
 
 void draw(){
+  noStroke();
   tick();
   render();
   fill(255);
