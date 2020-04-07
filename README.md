@@ -7,7 +7,7 @@ To play, download and unzip pong.zip and run pong.exe
 
 
 
-
+[Download](https://github.com/binoy-d/pong/raw/master/pong/pong.zip)
 
 
 
